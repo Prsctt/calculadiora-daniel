@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Calculadora Simples</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+    <h1>Calculadora Simples</h1>
+    <input type="number" id="n1" />
+    <input type="number" id="n2" />
+    <br />
+    <button onclick="calcular('+')">+</button>
+    <button onclick="calcular('-')">-</button>
+    <button onclick="calcular('*')">*</button>
+    <button onclick="calcular('/')">/</button>
+    <p id="resultado"></p>
+
+    <script>
+    function calcular(op) {
+        const n1 = parseFloat(document.getElementById("n1").value);
+        const n2 = parseFloat(document.getElementById("n2").value);
+        let res;
+        switch(op) {
+        case '+': res = n1 + n2; break;
+        case '-': res = n1 - n2; break;
+        case '*': res = n1 * n2; break;
+        case '/': res = n2 !== 0 ? n1 / n2 : 'Erro: divisão por zero'; break;
+    }
+        document.getElementById("resultado").textContent = "Resultado: " + res;
+    }
+    </script>
+
+</body>
+
+</html>
